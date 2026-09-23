@@ -156,6 +156,7 @@ void _runTest(String path) {
   // Read the test and parse out the expectations.
   var test = Test(path);
 
+
   // See if it's a skipped or non-test file.
   if (!test.parse()) return;
 
@@ -205,9 +206,14 @@ class Test {
 
   bool parse() {
     // Get the path components.
-    var parts = _path.split("/");
+    var parts = _path.split("\\");
     var subpath = "";
     String state;
+
+    // windows adds a . to the beginning of the path
+    if(parts[0] == "."){
+        parts.removeAt(0);
+    }
 
     // Figure out the state of the test. We don't break out of this loop because
     // we want lines for more specific paths to override more general ones.
