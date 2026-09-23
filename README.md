@@ -167,6 +167,8 @@ $ make test_all   # All of the above.
 
 ### Testing your implementation
 
+>> Note: the pubspec.yaml file in the `tool` directory requires a version of dart older than 3.0.0. Visit [the dart SDK archive](https://dart.dev/get-dart/archive) for instructions on installing older versions of dart.
+
 You are welcome to use the test suite and the test runner to test your own Lox
 implementation. The test runner is at `tool/bin/test.dart` and can be given a
 custom interpreter executable to run using `--interpreter`. For example, if you
